@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1</title>
+  <title>Face2Emoji</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <main>
     <p><a href="/">Back home</a></p>
-    <h1>Project 1</h1>
-    <p>This project does XYZ.</p>
-    <p><a href="https://your-live-project-link.com" target="_blank">Open project</a></p>
-    <p><a href="https://github.com/yourusername/project-1" target="_blank">Source code</a></p>
+    <h1>Face2Emoji</h1>
+    <p><a href="https://huggingface.co/spaces/Lucasmagne/Face2Emoji" target="_blank" rel="noopener noreferrer">Open project</a></p>
+
+    <h2>What It Does</h2>
+    <p>
+      This is Face2Emoji, a web based application that reads a user's live facial expression and translates it into an emoji in real time.
+      In this application, users open the website and the site uses the camera to capture live facial expressions from the user.
+      Then, the machine learning model embedded in the website analyzes the face and predicts the emotion.
+      The matching emoji and label then appear on the screen.
+      Predictions continue updating in real time as the user changes their facial expression.
+    </p>
+
+    <h2>How We Built It</h2>
+    <p>
+      First, we organized and collected a bunch of facial expression datasets into the following classes: happy, sad, angry, scared, surprised, wink, and neutral.
+      There are 9112 images total.
+      Then, we used a ResNet18 model, a Convolutional Neural Network (CNN), with resized 160x160 images, 24 epochs, and batch sizes of 64 to train the model to classify emotions.
+      This CNN first learns simple features such as edges, lines, and curves.
+      In the next layers, it combines these simple features into larger parts such as eyes and mouth.
+      In the deeper layers, it learns more complex patterns related to the specific expressions.
+      After combining all of these learned patterns, the model is able to distinguish between emotions.
+      Then we exported the final .pth model for inference and connected it with the website.
+      As for the website, the backend was written in Python using a web framework to handle routing and run the ML model.
+      The frontend was created using HTML and uses the webcam to capture live video input from the user directly in the browser.
+    </p>
   </main>
 </body>
 </html>
