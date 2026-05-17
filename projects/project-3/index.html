@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Equipped Drone for Early Detection of Wildfires</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="project-page">
+  <main class="project-main">
+    <p><a class="back-link" href="/">Back home</a></p>
+
+    <section class="project-hero">
+      <div class="project-hero-text">
+        <h1>Machine Learning Equipped Drone for Early Detection of Wildfires</h1>
+        <p class="project-tagline">A wildfire prediction system that combines drone-collected environmental data, imagery, and machine learning to estimate fire risk before ignition.</p>
+        <div class="project-actions">
+          <a class="project-button" href="https://github.com/Lucasmagne/Wildfire-Drone" target="_blank" rel="noopener noreferrer">🔥 Open Project</a>
+        </div>
+      </div>
+      <div class="project-hero-emoji" aria-hidden="true">🔥</div>
+    </section>
+
+    <section class="project-section">
+      <h2>Introduction</h2>
+      <p>
+        California wildfires continue to have severe environmental, social, and economic impacts, causing billions of dollars in damage and displacing countless individuals each year.
+        Although existing wildfire hazard systems and detection technologies help monitor fire activity, many rely heavily on historical data or only identify fires after they have already started.
+        To address these limitations, our project develops a machine learning-based wildfire prediction system that aims to assess fire risk before ignition occurs.
+        Using inputs such as temperature, humidity, and satellite imagery collected through drone technology, our model provides near real-time wildfire risk analysis.
+        In addition, our user-friendly website allows users to easily access fire probability data and interactive wildfire risk maps for different regions.
+        By combining automation, accessibility, and predictive technology, our project seeks to improve wildfire preparedness and help communities make more informed safety decisions.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Methods</h2>
+      <p>
+        The dataset, comprising approximately 5750 entries for both fire and non-fire data points, was gathered through a systematic process.
+        Every datapoint had a satellite image of the vegetation, the highest temperature of the day, and the humidity present at the time.
+        The data collection process was guided by the US Homeland Security map of wildfire risk.
+        The tools we used for data collection were the Google Earth Pro app (satellite image), Wikipedia (fire information), and timeanddate.com / wunderground.com (temperature/humidity data).
+        The drone cost $150, and the sensor was $50.
+        We attached a SensorPush sensor on the drone using rubber bands that collects the temperature and humidity data.
+        The drone collects a bird's-eye view image of the vegetation and sends it directly to our back-end servers.
+        After developing the model, we built a website that allows the user to input data and receive a fire risk probability for their location.
+      </p>
+      <p>
+        To create the machine learning model, we used Python's TensorFlow library, which offers a set of tools for building and training models.
+        We created two separate model structures for the data, which consisted of temperature and humidity values, and image data, which is a satellite image of the vegetation.
+        For the numeric data, we used a Multi-layer Perception (MLP) model because this type of model is great at recognizing patterns in small amounts of data.
+        For the image data, we used a Convolutional Neural Network (CNN) model, which is a common way to analyze images.
+        The outputs of these two models are then concatenated together and processed with a linear activation layer to produce the final result, which is the risk index of the data.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Results</h2>
+      <p>
+        In validating our results, we utilized the National Wildfire Risk Index Map provided by the US Department of Homeland Security.
+        The conclusion of our analysis revealed an impressive 91–92% accuracy for our model.
+        Notably, as we expanded our dataset with additional data points, the model demonstrated an improvement in accuracy.
+      </p>
+      <p>
+        We collected 445 data points, each containing an image of the vegetation and temperature and humidity values.
+        We inputted these data points into our model, which gave us the risk index of each point.
+        The plot shows the correlation of risk index and temperature/humidity values.
+        Overall, areas with high temperature and low humidity tend to have higher risk indexes.
+        We can also see that the risk index of areas with similar temperature/humidity values can still vary, which suggests that the vegetation image captured by the drone also plays an important role in determining the final risk index.
+      </p>
+      <p>
+        We collected 94 data points consisting of a combination of drone and satellite images and plotted the risk index on a map of the Bay Area.
+        Overall, the wildfire risk of the Bay Area at this time seems to be moderate.
+        This is likely due to the current season, as wildfires occur more commonly around August.
+        Our data is also quite consistent with the USDHS's map, with forests in the northern Bay Area having a relatively low risk index compared to the southern Bay Area.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
