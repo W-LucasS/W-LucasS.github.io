@@ -21,6 +21,11 @@
       <div class="project-hero-emoji" aria-hidden="true">🔥</div>
     </section>
 
+    <section class="project-media-card">
+      <img class="project-figure" src="/images/wildfire-drone/modelstructure.png" alt="Wildfire drone model structure diagram">
+      <p class="project-figure-caption">Model structure combining an MLP for numeric data and a CNN for image data before concatenation.</p>
+    </section>
+
     <section class="project-section">
       <h2>Introduction</h2>
       <p>
@@ -61,6 +66,16 @@
         The conclusion of our analysis revealed an impressive 91–92% accuracy for our model.
         Notably, as we expanded our dataset with additional data points, the model demonstrated an improvement in accuracy.
       </p>
+      <div class="project-results-grid">
+        <figure class="project-results-figure">
+          <img class="project-figure" src="/images/wildfire-drone/output.png" alt="Wildfire drone accuracy graph">
+          <figcaption class="project-figure-caption">Accuracy graph showing model performance during validation.</figcaption>
+        </figure>
+        <figure class="project-results-figure">
+          <img class="project-figure" src="/images/wildfire-drone/realtemphumid.png" alt="Wildfire drone temperature humidity results graph">
+          <figcaption class="project-figure-caption">Risk index behavior against real temperature and humidity measurements.</figcaption>
+        </figure>
+      </div>
       <p>
         We collected 445 data points, each containing an image of the vegetation and temperature and humidity values.
         We inputted these data points into our model, which gave us the risk index of each point.
